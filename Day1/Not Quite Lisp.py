@@ -2,10 +2,13 @@ input = "()(((()))(()()()((((()(((())(()(()((((((()(()(((())))((()(((()))((())((
 
 floor = 0
 
-for paren in input:
-    if paren == "(":
+for i in range(len(input)):
+    if input[i] == "(":
         floor += 1
-    elif paren == ")":
+    elif input[i] == ")":
         floor -= 1
+    if floor == -1:
+        print(i + 1)
+        break
 
 print(floor)
