@@ -9,21 +9,28 @@ first = 0
 last = 0
 sum = 0
 
-for x in inputs:
+def check_word_forwards(x):
     for i in range(len(x)):
         if x[i].isnumeric():
-            first = x[i]
-            break
+            return x[i]
         for num in range(len(numbers)):
-            if x[i:i + 5] in numbers[num]:
-                first = num + 1
-                print(x[i:i + 5])
+            if numbers[num] in x[i:i + 5]:
+                return str(num + 1)
             
+def check_word_backwards(x):
+    for i in range(len(x)):
+        if x[len(x) - i - 1].isnumeric():
+            return x[len(x) - i - 1]
+        for num in range(len(numbers)):
+            if numbers[num] in x[i:i - 5]:
+                return str(num + 1)
+                
 
-
-
-
-    print(first)
+for x in inputs:
+    first = check_word_forwards(x)
+    last = check_word_backwards(x)
+            
+    sum += int(first + last)
 
 print(sum)
 
