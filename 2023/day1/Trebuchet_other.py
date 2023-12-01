@@ -22,18 +22,21 @@ def check_word_backwards(x):
         if x[len(x) - i - 1].isnumeric():
             return x[len(x) - i - 1]
         for num in range(len(numbers)):
-            print(x[len(x) - i - 5:len(x) - i])
             if numbers[num] in x[len(x) - i - 5:len(x) - i]:
                 return str(num + 1)
                 
+write = open("other_sums.txt", "w")
 
 for x in inputs:
     print(x)
     first = check_word_forwards(x)
     last = check_word_backwards(x)
     print(first + last)
+
+    write.write(first + last + "\n")
             
     sum += int(first + last)
 
 print(sum)
 
+write.close()

@@ -8,6 +8,8 @@ first = 0
 last = 0
 sum = 0
 
+write = open("sums.txt", "w")
+
 for x in inputs:
     word = ""
     for char in x:
@@ -33,8 +35,9 @@ for x in inputs:
             last = word[len(word) - i - 1]
             break
 
+    write.write(first + last + "\n")
+
     sum += int(first + last)
-    print(first + last)
 
 print(sum)
 
