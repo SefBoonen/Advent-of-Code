@@ -1,7 +1,7 @@
 inputs = []
 numbers = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine']
 
-f = open("input.txt", "r")
+f = open("./2023/day1/input.txt", "r")
 for i in f.readlines():
     inputs.append("{}".format(i).replace("\n", ""))
 
@@ -9,7 +9,7 @@ first = 0
 last = 0
 sum = 0
 
-write = open("replace.txt", "w")
+write = open("./2023/day1/replace.txt", "w")
 
 for x in inputs:
     backwards = x
